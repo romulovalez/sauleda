@@ -6,8 +6,6 @@ It has an option to change the `orientation` of the slider to `vertical`, but it
 
 Steps to manually update the script:
 
-- Enter `https://neww.sauleda.com/wp-admin` with credentials provided by the client
-
 - Go to `Plugins > Plugin editor > JetElements > Select`
 
 - Open `assets/js/jet-elements.min.js` file
