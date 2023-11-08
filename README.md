@@ -17,7 +17,7 @@ Steps to manually update the script:
   - Replace `find(".jet-slider__content");` with `find(".jet-slider__content");i.attr("style", 'visibility: hidden; width: 100%; height: 100%; margin: auto; inset: 0px 0px 0px 0%; transform-origin: center center; transform: scale(1); opacity: 0;');`
 
 - Optional - Update the slider with the mouse wheel:
-  - Replace `e(".slider-pro",r).sliderPro` with `(() => {if (!document.getElementById('my-slider')) return;let inUse=!1;window.addEventListener("wheel",i=>{if(inUse)return;inUse=!0;let l=setTimeout(()=>{e(".slider-pro").sliderPro(i.deltaY<0?"previousSlide":"nextSlide"),inUse=!1,clearTimeout(l)},300)})})();e(".slider-pro",r).sliderPro`
+  - Replace `e(".slider-pro",r).sliderPro` with `(()=>{if(!document.getElementById("my-slider"))return;let l=0;window.addEventListener("scrollend",r=>{let d=document.documentElement.scrollTop;e(".slider-pro").sliderPro(d<l?"previousSlide":"nextSlide"),l=d<=0?0:d})})();e(".slider-pro",r).sliderPro`
 
 # Make changes available to browsers (clean cache)
 
