@@ -28,23 +28,6 @@ Steps to manually update the script:
 - Search and edit:
 
 ```diff
-    public function enqueue_scripts() {
-
-			$min_suffix = jet_elements_tools()->is_script_debug() ? '' : '.min';
-
-			wp_enqueue_script(
-				'jet-elements',
-				jet_elements()->plugin_url( 'assets/js/jet-elements' . $min_suffix . '.js' ),
-				array( 'jquery', 'elementor-frontend' ),
--				jet_elements()->get_version(),
-+				jet_elements()->get_version() . 'custom', // Add 'custom' to force browsers to update the script
-				true
-			);
-
-			wp_localize_script(
-				'jet-elements',
-				'jetElements',
-				apply_filters( 'jet-elements/frontend/localize-data', $this->localize_data )
-			);
-		}
+-    'version' => $this->get_version(),
++    'version' => $this->get_version() . 'custom', // Add 'custom' to force browsers to update the script
 ```
